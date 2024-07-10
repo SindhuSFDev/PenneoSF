@@ -1,0 +1,14 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global">
+
+    <aura:attribute name="buttonLabel" type="String" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <lightning:layout class="slds-grid slds-grid_vertical-align-center slds-wrap slds-m-left_small ">
+        <lightning:layoutItem class=" marginClass" size="12" smallDeviceSize="12"
+            mediumDeviceSize="12" largeDeviceSize="6">
+            <lightning:button variant="brand" label="{!v.buttonLabel}" title="{!v.buttonLabel}"
+                onclick="{!c.returnToHome}" class="buttonBrand" />
+        </lightning:layoutItem>
+    </lightning:layout>
+</aura:component>

@@ -1,0 +1,54 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction,lightning:actionOverride,force:hasSObjectName" access="global" >
+    <aura:attribute name="pageReference" type="Object"/>
+    <aura:attribute name="showSpinner" type="Boolean" default="false"/>
+    <aura:attribute name="showInboundLead" type="Boolean" default="false"/>
+    <aura:attribute name="showOutboundLead" type="Boolean" default="false"/>
+    <aura:attribute name="recordTypeId" type="String"/>
+    <aura:attribute name="accountId" type="String"/>
+    <lightning:navigation aura:id="navService"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <lightning:card>
+        <lightning:recordEditForm aura:id="newOpportunity" recordId="{!v.recordId}" objectApiName="Opportunity" 
+                                  onsubmit="{!c.handleSubmit}"
+                                  onsuccess="{!c.handleSuccess}"
+                                  onerror="{!c.handleError}"
+                                  onload="{!c.handleCreateLoad}">
+            
+            <lightning:messages aura:id="emessages"/>
+            
+            <aura:if isTrue="{!v.showSpinner}">
+                <lightning:spinner alternativeText="Loading" size="medium" variant="brand"/>
+            </aura:if>
+            
+            <lightning:layout multipleRows="true">
+                <lightning:layoutItem size="6"  smallDeviceSize="12" mediumDeviceSize="6" largeDeviceSize="6" padding="around-small">
+                    <lightning:inputField aura:id="nameField" fieldName="Name" required="true"/>
+                    <lightning:inputField fieldName="AccountId" required="true" aura:id="accId"/>
+                    <lightning:inputField fieldName="StageName" aura:id="stageField" required="true"/>
+                    <lightning:inputField fieldName="Type" required="true"/>
+                    <lightning:inputField fieldName="CurrencyIsoCode" required="true"/>
+                    <lightning:inputField fieldName="Penneo_Solution__c" required="true"/>
+                </lightning:layoutItem>
+                <lightning:layoutItem size="6"  smallDeviceSize="12" mediumDeviceSize="6" largeDeviceSize="6" padding="around-small">
+                    <lightning:inputField fieldName="CloseDate" />
+                    <lightning:inputField fieldName="LeadSource" onchange="{!c.handleLeadSourceChange}" required="true"/>
+                    <aura:if isTrue="{!v.showInboundLead}">
+                        <lightning:inputField fieldName="Inbound_Lead_Type__c"/>
+                    </aura:if>
+                    <aura:if isTrue="{!v.showOutboundLead}">
+                        <lightning:inputField fieldName="Outbound_Lead_Type__c"/>
+                    </aura:if>
+                    <lightning:inputField fieldName="RecordTypeId" class="slds-hidden"/>
+                </lightning:layoutItem>
+            </lightning:layout>
+            <lightning:layout multipleRows="true">
+                <lightning:layoutItem class="slds-m-top_small slds-align_absolute-center" size="6"  smallDeviceSize="12" mediumDeviceSize="6" largeDeviceSize="6" padding="around-small">
+                    <lightning:button label="Cancel" onclick="{!c.handleReset}" />
+                    <lightning:button variant="brand" type="submit" name="Save" label="Save" />
+                </lightning:layoutItem>
+            </lightning:layout>
+        </lightning:recordEditForm>  
+    </lightning:card>
+</aura:component>

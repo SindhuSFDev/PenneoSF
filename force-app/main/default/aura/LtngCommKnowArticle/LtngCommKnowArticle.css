@@ -1,0 +1,148 @@
+.THIS .cardClass{
+    border: 2px solid #198CC5;
+    background-color: #EDF6FA;
+    margin-left: 34px;
+    /* height: 200px; */
+    
+}
+
+.THIS .paddingTop{
+    /*margin-top: -100px;*/
+    font-family: Nunito !important
+}
+
+.THIS .borderColor{
+    border-left: 2px solid #198CC5;
+}
+
+.THIS .fontClass{
+    font-size: 16px;
+    /* line-height: 1.5; */
+    font-weight: 300;
+}
+
+.THIS .slds-text-heading_medium{
+    font-size: 24px;
+    font-weight: normal;
+}
+
+.THIS .slds-text-heading_large{
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.THIS a{
+    color: rgba(3, 34, 76, 1);
+    text-decoration: none;
+}
+
+.THIS a:hover{
+    color: #34d298;
+}
+
+.THIS li{
+    list-style-type: circle;
+    color: #34d298;
+}
+
+.THIS .onhover:hover{
+    color: #34d298;
+    cursor: pointer;
+}
+
+.THIS .onhover{
+    color: rgba(3, 34, 76, 1);
+}
+
+.THIS .articles_show_hide{
+    visibility: visible;
+}
+
+.THIS .child_label{
+    font-weight: 700;
+}
+
+.THIS .align_bottom{
+    position: absolute; 
+    bottom: 12px; 
+}
+
+.THIS .BoxClass{
+    border: 1px solid #c5c5c5;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 1px 1px 1px 1px #c5c5c5;
+    height: 300px;
+    width : 90%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
+
+.THIS .cardHoverStyle :hover{
+    background-color: #EDFAFF;
+}
+
+
+.THIS .headingTwo{
+    font-size: 44px;
+    color: #03224c;
+    margin-bottom: 30px;
+    line-height: 54px;
+    font-weight: 700;
+    margin-top: 30px;
+}
+
+.THIS .allCategoryHeading{
+    font-size: 30px;
+    color: #03224c;
+}
+
+.THIS .allCategoryPara{
+    color: #03224c;
+    font-size: 15px;
+}
+
+.THIS .BoxClass{
+    border: none !important;
+    box-shadow: 1px 1px 10px #e6e6e6 !important;
+}
+
+.THIS .BoxClass:hover{
+    background-color: rgba(59, 147, 235, 0.2) !important;
+}
+
+.cLtngCommKnowArticle .cardHoverStyle :hover{
+    background-color: transparent;
+}
+
+@media (max-width:1200px) {
+    .THIS .headingTwo{
+        font-size: 40px;
+    }
+    
+}
+
+@media all and (max-width:767px) {
+    .THIS .borderColor{
+        border: none;
+    }
+    
+    .THIS .cardClass {
+        height: 180px;
+    }
+    
+    .THIS .articles_show_hide{
+        visibility: hidden;
+        display: none;
+    }
+    
+    .THIS.paddingTop{
+        margin-top: -50px;
+    }
+    
+    .THIS .headingTwo{
+        font-size: 32px;
+    }
+}

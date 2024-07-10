@@ -1,0 +1,53 @@
+.THIS .cookiePolicyTxt{
+    color: #fff;
+    font-size: 12px;
+    margin-top: 10px;
+    position: fixed;
+    width: 98%;
+    bottom: 10px;
+    background: #fff;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 1px 1px 8px #e6e6e6;
+    padding: 30px 15px;
+    display: -webkit-flex;
+    display: -webkit-box;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-justify-content: space-between;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    z-index: 999;
+}
+
+.THIS .cookiePolicyTxt p{
+    color: #000;
+}
+
+.THIS .cookiePolicyTxt .cookieBtn{
+    height: 35px;
+    background: #03224C;
+    border: 1px solid #03224C;
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.5s ease-in-out all;
+    width: 100px;
+    margin-left: 10px;
+}
+
+.THIS .cookiePolicyTxt .cookieBtn:hover{
+    background: transparent;
+    color: #03224C;
+}
+
+.THIS .showBox {
+    display: block;
+}
+
+.THIS .hideBox {
+    display: none;
+}

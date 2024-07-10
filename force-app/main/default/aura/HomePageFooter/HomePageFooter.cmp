@@ -1,0 +1,177 @@
+<aura:component
+                implements="forceCommunity:availableForAllPageTypes,lightning:isUrlAddressable,flexipage:availableForAllPageTypes"
+                access="global" controller="KnowArticleController">
+    
+    <aura:attribute name="listOfKnowArticles" type="List" access="global"/>
+    <c:ApexService aura:id="service"/>
+    <aura:attribute name="topicID" type="String"/>
+    <aura:attribute name="language" type="String"/>
+    <aura:attribute name="redirectUrl" type="String"/>
+    <aura:attribute name="backgroundImageURL" type="String"/>
+    <aura:attribute name="backgroundImageURL_1" type="String"/>
+    <aura:attribute name="backgroundImageURL_2" type="String"/>
+    
+    <aura:attribute name="getStartedSetting" type="String"/>
+    <aura:attribute name="sendCaseFiles" type="String"/>
+    <aura:attribute name="manageFiles" type="String"/>
+    <aura:attribute name="signing" type="String"/>
+    <aura:attribute name="formaValidation" type="String"/>
+    <aura:attribute name="applicationIntegration" type="String"/>
+    <aura:attribute name="getStart" type="String"/>
+    <aura:attribute name="clients" type="String"/>
+    <aura:attribute name="docCollection" type="String"/>
+    <aura:attribute name="riskAssesment" type="String"/>
+    <aura:attribute name="securityData" type="String"/>
+    <aura:attribute name="integration" type="String"/>
+    <aura:attribute name="troubleshooting" type="String"/>
+    <aura:attribute name="glossary" type="String"/>
+    <aura:attribute name="securityFrame" type="String"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <aura:if isTrue="{!v.showSpinner}">
+        <lightning:spinner alternativeText="Loading" size="large"/>
+    </aura:if>
+    
+    <div class="footer_div"
+         style="{!'background-image: url('+v.backgroundImageURL_1+');background-position:center;background-size:100% 100%;'}">
+        <img src="{!v.backgroundImageURL_2}" alt="footerVector" class="footerVector"></img>
+        <div class="mainDivStyle">
+            
+            
+            
+            <!-- new Style -->
+            <div class="columnFlex">
+                <div class="footerColumn"></div>
+                <div class="footerColumn">
+                    <h3 class="columnHeading">Penneo Sign</h3>
+                    <ul class="footerLinks">
+                        <li><a href="{!v.getStartedSetting}">{!$Label.c.Getting_Started_and_Settings }</a></li>
+                        <li><a href="{!v.sendCaseFiles}">{!$Label.c.Send_out_case_files}</a></li>
+                        <li><a href="{!v.manageFiles}">{!$Label.c.Manage_case_files}</a></li>
+                        <li><a href="{!v.signing}">{!$Label.c.Signing}</a></li>
+                        <li><a href="{!v.formaValidation}">{!$Label.c.Forms_and_identity_validation}</a></li>
+                        <li><a href="{!v.applicationIntegration}">{!$Label.c.Applications_integration_and_API}</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footerColumn">
+                    <h3 class="columnHeading">Penneo KYC</h3>
+                    <ul class="footerLinks">
+                        <li><a href="{!v.getStart}">{!$Label.c.Getting_Started}</a></li>
+                        <li><a href="{!v.clients}">{!$Label.c.Clients}</a></li>
+                        <li><a href="{!v.docCollection}">{!$Label.c.Document_collection}</a></li>
+                        <li><a href="{!v.riskAssesment}">{!$Label.c.Risk_assestment}</a></li>
+                        <li><a href="{!v.securityData}">{!$Label.c.Security_and_data_retention}</a></li>
+                        <li><a href="{!v.integration}">{!$Label.c.Integration}</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footerColumn">
+                    <h3 class="columnHeading">Support</h3>
+                    <ul class="footerLinks">
+                        <li><a href="{!v.troubleshooting}">{!$Label.c.Troubleshooting}</a></li>
+                        <li><a href="https://app.penneo.com/validator">{!$Label.c.Verify_Document}</a></li>
+                        <li><a href="https://status.penneo.com/">{!$Label.c.Operating_Status}</a></li>
+                        <li><a href="{!v.glossary}" style="font-weight: bold;"><b>{!$Label.c.Glossary}</b></a></li>
+                        <li><a href="{!v.securityFrame}"><b>{!$Label.c.Security_Framework}</b></a></li>
+                        <li><a href="https://penneo.com/"><b>{!$Label.c.Back_to_Penneo_website}</b></a></li>
+                    </ul>
+                </div>
+                <div class="footerColumn"></div>
+            </div>
+            <!-- end of new Style -->
+            
+            
+            <!--<lightning:layout multipleRows="true" class="divPaddingBottom">
+                <aura:iteration items="{!v.listOfKnowArticles}" var="category">
+                    <lightning:layoutItem size="12" largeDeviceSize="4" mediumDeviceSize="4" smallDeviceSize="6" class="parentChildDiv">
+                        <div class="slds-m-bottom_xx-small child_label slds-text-title_caps">
+                            <a href="{!v.redirectUrl+ category.parentName}"
+                               style="font-size: 20px;color: #fff;font-weight: 600;margin-bottom: 15px;text-decoration: none;display:inline-block;">
+                                {!category.parentLabel}
+                            </a>
+                        </div>
+                        <aura:iteration items="{!category.innerClass}" var="child">
+                            <lightning:layout multipleRows="true">
+                                <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="12"
+                                                      largeDeviceSize="12">
+                                    <div onclick="{!c.navigateToNew}" class="onhover child_label"
+                                         data-value="{!v.redirectUrl+ child.childName}" title="{!child.childLabel}"
+                                         style="color: #fff;text-decoration: none;font-weight: 300;line-height: 24px; cursor: pointer;">
+                                        {!child.childLabel}
+                                    </div>
+                                </lightning:layoutItem>
+                            </lightning:layout>
+                        </aura:iteration>
+                    </lightning:layoutItem>
+                </aura:iteration>
+                <lightning:layoutItem size="12" largeDeviceSize="4" mediumDeviceSize="4" smallDeviceSize="12">
+                    <div class="slds-m-bottom_xx-small child_label slds-text-title_caps supportDiv">
+                        <p style="font-size: 20px;color: #fff;font-weight: 600;margin-bottom: 15px;text-decoration: none;display:inline-block;">
+                            Support
+                        </p>
+                    </div>
+                    <lightning:layout multipleRows="true">
+                        <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="12"
+                                              largeDeviceSize="12">
+                            <div class="onhover child_label"
+                                 title="Troubleshooting">
+                                Troubleshooting
+                            </div>
+                        </lightning:layoutItem>
+                        <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="12"
+                                              largeDeviceSize="12">
+                            <div class="onhover child_label"
+                                 title="Verify Document">
+                                Verify Document
+                            </div>
+                        </lightning:layoutItem>
+                        <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="12"
+                                              largeDeviceSize="12">
+                            <div class="onhover child_label"
+                                 title="Operating Status">
+                                Operating Status
+                            </div>
+                        </lightning:layoutItem>
+                        <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="12"
+                                              largeDeviceSize="12">
+                            <div class="onhover child_label">&nbsp;
+                            </div>
+                        </lightning:layoutItem>
+                        <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="12"
+                                              largeDeviceSize="12">
+                            <div class="onhover child_label"
+                                 title="Security Framework">
+                                Security Framework
+                            </div>
+                        </lightning:layoutItem>
+                        <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="12"
+                                              largeDeviceSize="12">
+                            <div class="onhover child_label"
+                                 title="Back to Penneo website">
+                                Back to Penneo website
+                            </div>
+                        </lightning:layoutItem>
+                    </lightning:layout>
+                </lightning:layoutItem>
+            </lightning:layout>-->
+            
+            <div style="border-bottom: 1px solid #fff;" class="slds-m-vertical--small"></div>
+            
+            <lightning:layout multipleRows="true">
+                <lightning:layoutItem size="12" smallDeviceSize="12" largeDeviceSize="6" mediumDeviceSize="6">
+                    <p class="footerBottomLine">PENNEO A/S - ENGHAVEVEJ 40, 4. SAL - 1674 KOBENHAVN V - DENMARK - CVR: 35633766</p>
+                </lightning:layoutItem>
+                <lightning:layoutItem size="12" smallDeviceSize="12" largeDeviceSize="6" mediumDeviceSize="6">
+                    <div class="slds-float--right slds-m-right_xx-large" style="font-family: Nunito;">
+                        <p class="footerBottomLine"><a href="https://penneo.com/terms/">{!$Label.c.Terms}</a>&nbsp;&nbsp;<a href="https://penneo.com/privacy-policy/">{!$Label.c.Privacy}</a>&nbsp;
+                            <a href="https://penneo.com/cookies/">{!$Label.c.Cookies}</a></p>
+                    </div>
+                </lightning:layoutItem>
+            </lightning:layout>
+        </div>
+        
+    </div>
+    
+</aura:component>

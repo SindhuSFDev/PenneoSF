@@ -1,0 +1,23 @@
+.THIS .buttonBrand{
+    background-color: #00B67A;
+    font-size: 20px;
+    width: 211px;
+    height: 48px;
+    border: none;
+}
+
+.THIS .buttonBrand:hover{
+    background-color: white;
+    color: #00B67A;
+    transition: background-color .12s ease-in-out, border-color .12s ease-in-out, color .15s ease-in-out;
+    transition-property: background-color, border-color, color;
+    transition-duration: 0.12s, 0.12s, 0.15s;
+    transition-timing-function: ease-in-out, ease-in-out, ease-in-out;
+    transition-delay: 0s, 0s, 0s;
+    border: none;
+
+}
+
+.THIS .marginClass{
+    margin-left: 1rem;
+}

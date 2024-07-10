@@ -1,0 +1,21 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction"
+                access="global" controller="ResetComponentController">
+    <aura:attribute type="boolean" name="isChecked" />
+
+    <c:ApexService aura:id="service" />
+    <lightning:card>
+        <aura:set attribute="title">
+            <lightning:icon iconName="utility:connected_apps" size="small"/>
+            Reset Voting
+        </aura:set>
+        <aura:set attribute="footer">
+           <lightning:button variant="brand" label="Reset"
+                             title="Reset" onclick="{!c.deleteVoting}" />
+        </aura:set>
+       <lightning:input type="checkbox" 
+                        label="Reset Voting" name="input1" value="{!v.isChecked}" class="slds-p-around--small"/>
+        
+    </lightning:card>
+    
+
+</aura:component>

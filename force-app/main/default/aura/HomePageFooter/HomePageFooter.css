@@ -1,0 +1,195 @@
+/*.THIS .Polygon{
+clip-path: polygon(0% 22%, 57% 0%, 140% 54%, 100% 106%, 0% 100%);
+background-color : #03224C ;
+height: 350px;
+border-radius: 10% 10% 0% 0%;
+color:white;
+}*/
+
+.THIS{
+    position: relative;
+}
+
+.THIS .footerVector{
+    max-width: 15%;
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.THIS .footer_div{
+    height: 840px;
+    background-position: center;
+}
+
+.THIS .slds-col--padded{
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+}
+
+.THIS .onhover:hover{
+    text-decoration: underline;  
+}
+
+.THIS .Polygon{
+    background-image:  url({!$Resource.HomePageFooterBAckgroundIMG});
+}
+
+.THIS .imageStyle{
+    position: absolute;
+    width: 99%;
+    bottom: 20px;
+    color: white;
+}
+
+.THIS .mainDivStyle{
+    padding: 150px 0 80px;
+    max-width: 1140px;
+    margin: 0 auto;
+    font-family: 'Nunito', sans-serif;
+    
+    
+    /*position: absolute;
+    width: 100%;
+    bottom: 0;
+    color: white;
+    line-height: 2;*/
+}
+
+.THIS .mainDivStyle .columnFlex{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: flex;
+    justify-content: space-between;
+}
+
+.THIS .mainDivStyle .footerColumn{
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+.THIS .mainDivStyle .footerColumn .columnHeading{
+    color: #fff;
+    padding-left: 20px;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.THIS .mainDivStyle .footerColumn .footerLinks {
+    padding-left: 20px;
+}
+
+.THIS .mainDivStyle .footerColumn:nth-child(1){
+    flex: 0 0 14.5%;
+    max-width: 14.5%;
+}
+
+.THIS .mainDivStyle .footerColumn:nth-child(5){
+    flex: 0 0 10.5%;
+    max-width: 10.5%;
+}
+
+.THIS .mainDivStyle .footerColumn .footerLinks li a{
+    color: #fff;
+    font-weight: 400;
+    font-size: 16px;
+    padding: 8px 0;
+    display: inline-block;
+}
+
+.THIS .footerBottomLine a{
+    color: #fff;
+}
+
+.THIS .child_label, .THIS .footerBottomLine{
+    color: #fff;
+    text-decoration: none;
+    font-weight: 300;
+    line-height: 24px; 
+    cursor: pointer;
+}
+
+.THIS .divPaddingBottom{
+    padding-bottom: 80px;
+}
+
+
+@media (max-width: 1200px){
+    .THIS .mainDivStyle{
+        max-width: 991px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 1039px){
+    .THIS{
+        background-size: cover !important;
+    }
+    
+    .THIS .mainDivStyle{
+        padding: 190px 0 80px;
+    }
+    
+    .THIS .mainDivStyle .columnFlex{
+        flex-wrap: wrap;
+    }
+    
+    .THIS .mainDivStyle .footerColumn:nth-child(1){
+        display: none;
+    }
+    
+    .THIS .mainDivStyle .footerColumn{
+        flex: 0 0 45%;
+        max-width: 45%;
+    }
+}
+
+@media (max-width: 991px){
+    .THIS .mainDivStyle{
+        max-width: 768px;
+        margin: 0 auto;
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+}
+
+@media (max-width: 767px){
+    .THIS .mainDivStyle{
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 150px 16px 15px;
+    }
+    
+    .THIS .footer_div{
+        height: unset !important;
+    }
+    
+    .THIS .parentChildDiv{
+        margin-bottom: 25px;
+    }
+    
+    .THIS .divPaddingBottom{
+        padding-bottom: 0px;
+    }
+}
+
+@media (max-width: 600px){
+    /*.THIS .footer_div{
+    height: 700px !important;
+    background-size: unset !important;
+}*/
+}
+
+@media (max-width: 480px){
+    .THIS .divPaddingBottom{
+        justify-content: flex-start !important;
+    }
+    
+    .THIS .mainDivStyle .footerColumn{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}

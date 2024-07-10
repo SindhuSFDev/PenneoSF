@@ -1,0 +1,32 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes,lightning:isUrlAddressable,flexipage:availableForAllPageTypes" 
+                access="global" controller="LC_ArticleViewCommunityCtrl">
+    
+    <c:ApexService aura:id="service" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" /> 
+    
+    <aura:attribute type="List" name="articles"/>
+    <aura:attribute type="String" name="articleName"/>
+    <aura:attribute name="language" type="String"/>
+    <aura:attribute name="showComponent" type="Boolean"/>
+
+
+    <lightning:layout multipleRows="true">
+    <aura:iteration var="art" items="{!v.articles}">   
+            <!--<lightning:layoutItem size="12" padding="around-small">
+                <p style="font-size: 32px;font-weight:800;color: #03224C;font-family: Nunito !important;">{!art.Title}</p>
+            </lightning:layoutItem>-->
+            <lightning:layoutItem size="12" padding="around-large" class="AnswerStyle" >
+                <lightning:formattedRichText value="{!art.Answer__c}"/>
+                <!--<aura:unescapedHtml value="{!art.Answer__c}" />-->
+            </lightning:layoutItem>
+
+        </aura:iteration>
+    </lightning:layout>
+    
+    <aura:if isTrue="{!v.showComponent}">
+       <c:SubscribeNewsletter language="{!v.language}"/>
+    </aura:if>
+
+    <c:guestArticleVote></c:guestArticleVote>
+    
+</aura:component>

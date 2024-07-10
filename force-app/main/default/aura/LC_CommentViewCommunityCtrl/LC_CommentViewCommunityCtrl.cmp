@@ -1,0 +1,41 @@
+<aura:component
+        implements="forceCommunity:availableForAllPageTypes,lightning:isUrlAddressable,flexipage:availableForAllPageTypes"
+        access="global" controller="LC_CommentViewCommunityCtrl">
+    <c:ApexService aura:id="service"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <aura:attribute type="List" name="Comment"/>
+    <aura:attribute type="String" name="articleName"/>
+    <aura:attribute type="String" name="NewComment"/>
+    <lightning:layout multipleRows="true">
+        <lightning:layoutItem size="12" class="slds-grid slds-wrap">
+            <aura:iteration var="Com" items="{!v.Comment}">
+                <lightning:layoutItem size="2"></lightning:layoutItem>
+                <lightning:layoutItem size="10">
+                    <lightning:layoutItem size="12" class="slds-wrap slds-grid">
+                        <lightning:layoutItem Size="6" padding="around-small">
+                            <p style="font-size: 16px;font-weight:800;color: #03224C;font-family: Nunito !important;">{!Com.CreatedBy.Name}</p>
+                        </lightning:layoutItem>
+                        <lightning:layoutItem size="6" padding="around-small">
+                            <p style="font-size: 16px;font-weight:800;color: #03224C;font-family: Nunito !important;">
+                                <lightning:formattedDateTime value="{!Com.CreatedDate}" year="numeric" month="numeric"
+                                                             day="numeric" hour="2-digit" minute="2-digit"
+                                                             hour12="false"/>
+                            </p>
+                        </lightning:layoutItem>
+                    </lightning:layoutItem>
+                    <lightning:layoutItem size="12" padding="around-small">
+                        <aura:unescapedHtml value="{!Com.Comment__c}"/>
+                    </lightning:layoutItem>
+                </lightning:layoutItem>
+            </aura:iteration>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="12">
+            <lightning:inputRichText value="{!v.NewComment}" placeholder="Type something interesting"/>
+            <lightning:buttonIcon iconName="utility:send" variant="container" onclick="{! c.handleSaveComment}"
+                                  alternativeText="Send" title="Send"/>
+        </lightning:layoutItem>
+
+    </lightning:layout>
+
+</aura:component>

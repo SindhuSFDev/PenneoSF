@@ -1,0 +1,58 @@
+<template>
+    <template if:true={isLoaded}>
+        <div class="slds-p-around--large">
+            <lightning-card>
+                <template if:false={isVoted}>
+                <lightning-layout multiple-rows="true" horizontal-align="center" class="slds-p-around--small">
+                    <!--
+                    <template if:false={isVoted}>
+                        <lightning-layout-item size="12" class="slds-text-align_center slds-p-bottom_x-small">
+                            <span>{message_ask}</span>
+                        </lightning-layout-item>
+                        <lightning-layout-item padding="horizontal-small" class="slds-m-bottom_small">
+                            <lightning-button variant="neutral" icon-name="utility:check" onclick={upvote}
+                                label={label_choice_yes} class="buttonClass">
+                            </lightning-button>
+                        </lightning-layout-item>
+                        <lightning-layout-item class="slds-m-bottom_small">
+                            <lightning-button variant="neutral" icon-name="utility:close" onclick={downvote}
+                                label={label_choice_no}>
+                            </lightning-button>
+                        </lightning-layout-item>
+                    </template>
+                    <lightning-layout-item size="12" class="slds-text-align_center slds-p-bottom_x-small ">
+                        <span>
+                            {upVotes} found this helpful
+                        </span>
+                    </lightning-layout-item>
+                    -->
+
+                    <!--Modified-->
+
+                    <lightning-layout-item size="6" small-device-size="12" medium-device-size="7" large-device-size="7" padding="around-small">
+                        <div class="slds-text-heading_small feedback-heading">{heading}</div>
+                        <div class="feedback-subheading">{subheading}</div>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="6" small-device-size="12" medium-device-size="7" large-device-size="5" padding="around-small" class="slds-text-align--right">
+                        <button type="submit" data-vote="Yes" onclick={handleVote} class="slds-button slds-button_neutral slds-m-left_x-small feedback-button yes-button">{Vote_Yes}</button>
+                        <button type="submit" data-vote="No" onclick={handleVote} class="slds-button slds-button_neutral slds-m-left_x-small feedback-button no-button">{Vote_No}</button>
+                    </lightning-layout-item>
+                    <template if:true={submitComments}>
+                        <lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12" padding="around-small">
+                            <lightning-textarea name="input3" placeholder={placeholder} value={comments}></lightning-textarea>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12" padding="around-small" class="slds-text-align--right">
+                            <lightning-button variant="brand" label={submit} title="Primary action" onclick={handleSubmit} class="slds-m-left_x-small"></lightning-button>
+                        </lightning-layout-item>
+                    </template>
+
+                </lightning-layout>
+            </template>
+
+                <template if:true={isVoted}>
+                    <div class="slds-text-align_center slds-p-bottom--medium" style="font-weight: bold;font-size:large">{feedback}</div>
+                </template>
+            </lightning-card>
+        </div>
+    </template>
+</template>

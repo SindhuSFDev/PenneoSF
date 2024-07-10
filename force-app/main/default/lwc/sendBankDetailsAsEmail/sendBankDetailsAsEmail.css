@@ -1,0 +1,11 @@
+.slds-p-around-medium{
+    margin: 1rem;
+}
+.spins::after {
+    position: absolute;
+    content: 'Fetching Fields of the Object......';
+    width: 100%;
+    text-align: center;
+    top: calc(50% + 3em);
+    font-weight: bold;
+}

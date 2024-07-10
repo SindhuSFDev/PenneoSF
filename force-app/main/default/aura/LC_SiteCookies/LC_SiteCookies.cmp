@@ -1,0 +1,29 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes,lightning:isUrlAddressable,flexipage:availableForAllPageTypes"
+                access="global">
+    <aura:attribute name="showCookie" type="Boolean" default="false"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <!-- Cookie Box -->
+    <!--<aura:if isTrue="{!v.showCookie}">
+        <div class="cookiePolicyTxt">
+            <p>We use cookies to provide you with the best user experience on our website. This website only uses functional cookies that are essential to keeping our website operational. Read more in our <a href="https://penneo.com/cookies/" target="_blank">Cookies Policy</a></p>
+            <button type="button" class="cookieBtn" onclick="{!c.hideCookieSection}">OK</button>
+        </div>
+    </aura:if>-->
+    <!-- End of Cookie Box -->
+    
+    <aura:if isTrue="{!v.showCookie}">
+        <div id="cookieNotice" class="light display-right" aura:id="cookieNotice">
+            <div class="content-wrap">
+                <div class="msg-wrap cookiePolicyTxt">
+                    <p>{!$Label.c.CookiePolicy}&nbsp;
+                        <a href="https://penneo.com/cookies/" target="_blank">Cookies Policy</a>
+                    </p>                
+                    <div class="btn-wrap">
+                    <button class="btn-primary cookieBtn" onclick="{!c.acceptCookieConsent}">Ok, I agree</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aura:if>
+    
+</aura:component>

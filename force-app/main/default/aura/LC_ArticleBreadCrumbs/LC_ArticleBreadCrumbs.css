@@ -1,0 +1,37 @@
+/**
+ * Created by yatishsalian on 15/12/21.
+ */
+.THIS .childLabelStyling{
+    font-size: 16px;
+    color: #03224c;
+    line-height: 20px;
+    font-weight: 700;
+    font-family: Nunito !important;
+}
+
+.THIS .slds-breadcrumb a{
+    font-size: 16px;
+    color: #03224c;
+    line-height: 20px;
+    font-weight: 700;
+    font-family: Nunito !important;
+    text-decoration: none;
+}
+
+.THIS .childLabelStyling:hover{
+    font-size: 16px;
+    color: #00c18d;
+    line-height: 20px;
+    font-family: Nunito !important;
+    font-weight: 700;
+}
+
+
+.THIS .slds-breadcrumb a:hover{
+    font-size: 16px;
+    color: #00c18d;
+    line-height: 20px;
+    font-weight: 700;
+    font-family: Nunito !important;
+    text-decoration: none;
+}

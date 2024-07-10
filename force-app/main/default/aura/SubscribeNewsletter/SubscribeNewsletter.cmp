@@ -1,0 +1,25 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes,flexipage:availableForAllPageTypes" access="global" >
+    <aura:attribute name="language" type="String"/>
+    <aura:attribute name="showEngNewsletter" type="Boolean" default="false"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" /> 
+    
+    <lightning:layout multipleRows="true">
+        <aura:if isTrue="{!v.showEngNewsletter}">
+            <lightning:layoutItem size="12" padding="around-small">
+                <!-- <h3><a style="font-size:29px;font-weight:bold;padding-left :17px;" id="API-newsletter">Sign up for our Newsletter</a></h3> -->
+                <h3><a style="color:#03224c;" id="API-newsletter">Sign up for our Newsletter</a></h3>
+            </lightning:layoutItem> 
+            <lightning:layoutItem size="12" padding="around-small">
+                <iframe src="https://go.marketing.penneo.com/l/880022/2023-06-09/2lhlzm" width="700px" height="400px" type="text/html" frameborder="0" allowTransparency="true" style="border: 0"></iframe>
+            </lightning:layoutItem>  
+            <aura:set attribute="else">
+                <lightning:layoutItem size="12" padding="around-small">
+                    <h3><a style="color:#03224c;" id="API-newsletter">Tilmeld dig vores API nyhedsbrev</a></h3>
+                </lightning:layoutItem> 
+                <lightning:layoutItem padding="around-small">
+                    <iframe src="https://go.marketing.penneo.com/l/880022/2023-06-23/2ll45n" width="700px" height="450px" type="text/html" frameborder="0" allowTransparency="true" style="border: 0"></iframe>
+                </lightning:layoutItem> 
+            </aura:set>
+        </aura:if>
+    </lightning:layout>
+</aura:component>

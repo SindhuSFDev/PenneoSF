@@ -1,0 +1,36 @@
+<!--
+ - Created by CloudRoute on 13-12-2021.
+ -->
+
+<aura:component description="LC_RelatedArticleView"
+                implements="forceCommunity:availableForAllPageTypes,lightning:isUrlAddressable,flexipage:availableForAllPageTypes"
+                access="global" controller="LC_RelatedArticleCtrl">
+    <c:ApexService aura:id="service"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <aura:attribute type="String" name="articleName"/>
+    <aura:attribute name="relatedArticle" type="List"/>
+    <aura:attribute name="redirectUrl" type="String"/>
+    <aura:attribute name="language" type="String"/>
+    
+    
+    <lightning:layout multipleRows="true">
+        
+        <aura:iteration items="{!v.relatedArticle}" var="article">
+            <lightning:layoutItem size="1">
+                <lightning:icon iconName="utility:chevronright" size="small"/>
+            </lightning:layoutItem>
+            <lightning:layoutItem size="11">
+                <div data-value="{!v.redirectUrl + article.UrlName}" onclick="{!c.TitleSelect}"
+                     class="childLabelStyling slds-m-bottom--small"
+                     style="font-size: 18px;font-weight:600;color: #03224C;font-family: Nunito">
+                    <a href="{!v.redirectUrl + article.UrlName}">{!article.Title}</a>
+                </div>
+            </lightning:layoutItem>
+            
+        </aura:iteration>
+        
+    </lightning:layout>
+    
+</aura:component>

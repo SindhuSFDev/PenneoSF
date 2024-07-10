@@ -1,0 +1,22 @@
+/**
+ * Created by ayushi.d@cloudroute.in on 27-10-2020.
+ */
+.THIS .btnClsFilter{
+    background-color: #00b67a;
+    color: white;
+}
+
+.THIS .btnCls{
+    height: 50px;
+    width: 190px;
+}
+
+.THIS .fontCls{
+    font-size : 1.25rem;
+    font-weight : 300;
+    line-height : 1.25;
+}
+
+.THIS .textareaHeight{
+    line-height: 3rem;
+}

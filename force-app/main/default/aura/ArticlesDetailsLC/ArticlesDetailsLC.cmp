@@ -1,0 +1,103 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" controller="KnowArticleController">
+
+    <aura:attribute name="topicID" type="String"/>
+    <aura:attribute name="totalRecordsToShow" type="Integer" default="6"/>
+    <aura:attribute name="showSpinner" type="Boolean" default="false"/>
+    <aura:attribute name="listOfKnowArticles" type="List" access="global"/>
+    <aura:attribute name="language" type="String"/>
+    <aura:attribute name="showAll" type="Boolean" default="false"/>
+    <aura:attribute name="showMessage" type="Boolean" default="true"/>
+    <aura:attribute name="redirectUrl" type="String"/>
+    <aura:attribute name="buttonLabel" type="String"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <aura:if isTrue="{!v.showSpinner}">
+        <lightning:spinner alternativeText="Loading" size="large"/>
+    </aura:if>
+
+    <lightning:layout class="slds-grid slds-grid_vertical-align-center slds-wrap">
+        
+        <lightning:layoutItem size="12" class="marginClass">
+            
+            <aura:iteration items="{!v.listOfKnowArticles}" var="category">
+                <div class="childLabelStyling">
+                    <lightning:breadcrumbs>
+                        <lightning:breadcrumb label="Help Center" onclick="{! c.returnToHome }"
+                                              class="childLabelStyling"/>
+                        <aura:if isTrue="{!not(empty(category.Parent))}">
+                            <lightning:breadcrumb label="{! category.Parent }" onclick="{! c.returnToHome }"
+                                                  class="childLabelStyling"/>
+                        </aura:if>
+                        <lightning:breadcrumb label="{! category.parentLabel }" onclick="{! c.returnToHome }"
+                                              class="childLabelStyling"/>
+                    </lightning:breadcrumbs>
+                </div>
+                <div class="ParentLabelStyling">
+                    {!category.parentLabel}
+                </div>
+                <div class="slds-m-right_xx-large accordionStyle">
+                    <lightning:layout class="slds-wrap">
+                        <aura:iteration items="{!category.innerClass}" var="child">
+                            <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="12"
+                                                  largeDeviceSize="12" class="">
+                                <lightning:card class=" cardClass">
+                                    <div onclick="{!c.navigateToNew}" data-value="{!v.redirectUrl+ child.childName}"
+                                         style="cursor: pointer;">
+                                        <!-- <a href="{!v.redirectUrl+ child.childName + 'showAll=true' }"> -->
+                                        <div class="slds-text-heading_medium childLabelStyling">
+                                            {!child.childLabel}
+                                        </div>
+                                        <!-- </a> -->
+                                    </div>
+                                    <lightning:layoutItem size="12">
+                                        <aura:iteration items="{!child.knowledgeArticles}" var="article"
+                                                        indexVar="index">
+                                            <aura:if isTrue="{!or(v.showAll, lessthan(index,v.totalRecordsToShow))}">
+                                                <ul class="slds-has-dividers_bottom slds-has-block-links_space">
+                                                    <li
+                                                            class="slds-item slds-m-right_xx-large accordionStyle slds-text-heading_small">
+                                                        <a href="{!'article/' +article.UrlName}">
+                                                                {!article.Title}
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </aura:if>
+                                        </aura:iteration>
+                                        <aura:if isTrue="{!!v.showAll}">
+                                            <aura:if
+                                                    isTrue="{!greaterthan(child.knowledgeArticles.length,v.totalRecordsToShow)}">
+                                                <div class="slds-col fontClass slds-p-right_x-small">
+                                                    <ul class="slds-has-block-links_space">
+                                                        <li
+                                                                class="slds-item slds-m-right_xx-large slds-text-heading_small slds-m-top_medium">
+                                                            <div onclick="{!c.navigateToNew}"
+                                                                 data-value="{!v.redirectUrl+ child.childName}" class="buttonBrand">
+                                                                <span class="onhover">
+                                                                    See all {!child.knowledgeArticles.length}
+                                                                    articles
+                                                                </span>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </aura:if>
+                                        </aura:if>
+
+                                    </lightning:layoutItem>
+                                    <!-- </div>
+                                    </div> -->
+                                </lightning:card>
+                            </lightning:layoutItem>
+                        </aura:iteration>
+
+                    </lightning:layout>
+                </div>
+            </aura:iteration>
+        </lightning:layoutItem>
+    </lightning:layout>
+
+    <c:ApexService aura:id="service"/>
+
+
+</aura:component>

@@ -1,0 +1,123 @@
+.THIS .cardClass{
+    border: none;
+   /*  font-family: "Abel", Arial, Sans-serif; */
+}
+
+.THIS .slds-text-heading_medium{
+    font-size: 24px;
+    font-weight: normal;
+    
+}
+
+.THIS .slds-text-heading_large{
+    font-size: 32px;
+    color: rgba(3, 34, 76, 1);
+    /* font-weight: bold; */
+}
+
+.THIS a{
+    font-size: 14px;
+    color: #03224c;
+    line-height: 54px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.THIS .buttonBrand{
+   
+    background-color: #00B67A;
+    font-size: 14px;
+    width: 211px;
+    height: 45px;
+    border: none;
+}
+
+.THIS .onhover:hover{
+    color: #00B67A;
+    cursor: pointer;
+}
+
+.THIS .buttonBrand:hover{
+    background-color: white;
+    color: #34d298;
+    transition: background-color .12s ease-in-out, border-color .12s ease-in-out, color .15s ease-in-out;
+    transition-property: background-color, border-color, color;
+    transition-duration: 0.12s, 0.12s, 0.15s;
+    transition-timing-function: ease-in-out, ease-in-out, ease-in-out;
+    transition-delay: 0s, 0s, 0s;
+    border: none;
+
+}
+
+.THIS .marginClass{
+     padding-top:20px;
+    margin-left: 4rem;
+    font-family: Nunito !important;
+}
+
+@media all and (max-width:767px) {
+  .THIS .marginClass{
+        margin-left: 2px;
+    }
+    
+    .THIS .accordionStyle{
+        margin-right: 0px !important;
+    }
+    
+    .THIS .ParentLabelStyling{
+        padding-left: 0px !important;
+        font-size: 34px !important;
+    }
+    
+    .THIS a{
+        line-height: normal;
+    }
+}
+
+.THIS .labelStyling{
+    font-size: 40px;
+    color: #03224c;
+    font-weight: 800;
+}
+
+.THIS .childLabelStyling{
+    font-size: 16px;
+    color: #03224c;
+    padding-left:5px;
+    padding-right:5px;
+    font-family: Nunito !important;
+/*    line-height: 54px;*/
+    font-weight:600;
+}
+
+.THIS .childLabelStyling:hover{
+     font-size: 16px;
+     color: #00c18d;
+     font-family: Nunito !important;
+     font-weight: 600;
+ }
+
+.THIS .slds-breadcrumb a{
+    font-size: 16px;
+    color: #03224c;
+    font-weight: 600;
+    line-height:27px;
+    text-decoration: none;
+}
+.THIS .slds-breadcrumb a:hover{
+    font-size: 16px;
+    color: #00c18d;
+
+    font-weight: 600;
+    font-family: Nunito !important;
+    text-decoration: none;
+}
+
+.THIS .ParentLabelStyling{
+    font-size: 42px;
+    color: #03224c;
+    padding-top:40px;
+    padding-left:10px;
+    line-height: 50px;
+    font-weight:700;
+}

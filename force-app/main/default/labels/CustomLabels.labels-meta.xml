@@ -1,0 +1,775 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Applications_integration_and_API</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Applications, integration and API</shortDescription>
+        <value>Applications, integration and API</value>
+    </labels>
+    <labels>
+        <fullName>Attachments</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Attachments</shortDescription>
+        <value>Attachments</value>
+    </labels>
+    <labels>
+        <fullName>Auto_Response_1</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Auto Response 1(In hour)</shortDescription>
+        <value>10</value>
+    </labels>
+    <labels>
+        <fullName>Auto_Response_2_In_hour</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Auto Response 2(In hour)</shortDescription>
+        <value>20</value>
+    </labels>
+    <labels>
+        <fullName>Auto_Response_3_In_hour</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Auto Response 3(In hour)</shortDescription>
+        <value>20</value>
+    </labels>
+    <labels>
+        <fullName>Auto_Response_Email_after_10_hour_Template_Id_Danish</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Auto Response Email after 10 hour Template Id Danish</shortDescription>
+        <value>00X7R000002ds2DUAQ</value>
+    </labels>
+    <labels>
+        <fullName>Auto_Response_Email_after_1_hour_Template_Id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Auto Response Email after 1 hour Template Id</shortDescription>
+        <value>00X7R000002ds1yUAA</value>
+    </labels>
+    <labels>
+        <fullName>Auto_Response_Email_after_20_hour_Template_Id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Auto Response Email after 20 hour Template Id</shortDescription>
+        <value>00X7R000002ds23UAA</value>
+    </labels>
+    <labels>
+        <fullName>Auto_Response_Email_after_20_hour_Template_Id_Danish</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Auto Response Email after 20 hour Template Id Danish</shortDescription>
+        <value>00X7R000002ds24UAA</value>
+    </labels>
+    <labels>
+        <fullName>Auto_Response_Email_after_30_hour_Template_Id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Auto Response Email after 30 hour Template Id</shortDescription>
+        <value>00X7R000002ds28UAA</value>
+    </labels>
+    <labels>
+        <fullName>Auto_Response_Email_after_30_hour_Template_Id_Danish</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Auto Response Email after 30 hour Template Id Danish</shortDescription>
+        <value>00X7R000002ds29UAA</value>
+    </labels>
+    <labels>
+        <fullName>Back_to_Penneo_website</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back to Penneo website</shortDescription>
+        <value>Back to Penneo website</value>
+    </labels>
+    <labels>
+        <fullName>Back_to_home_button_label</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back to home button label</shortDescription>
+        <value>Back to home</value>
+    </labels>
+    <labels>
+        <fullName>BadFeedbackButton</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>BadFeedbackButton</shortDescription>
+        <value>Bad, I&apos;m unsatisfied</value>
+    </labels>
+    <labels>
+        <fullName>CaseDocKey</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CaseDocKey</shortDescription>
+        <value>&lt;p&gt;The &lt;a href=&quot;https://penneo.force.com/support/s/article/How-to-locate-your-Case-file-ID&quot; target=&quot;_blank&quot;&gt; Case File ID&lt;/a&gt; is the 7-digits-long number appearing in the URL when viewing a case file&lt;/p&gt;</value>
+    </labels>
+    <labels>
+        <fullName>Case_Picklist_Contacted</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Case Picklist Contacted</shortDescription>
+        <value>Contacted</value>
+    </labels>
+    <labels>
+        <fullName>Case_Picklist_New_Case</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Case Picklist New Case</shortDescription>
+        <value>New Case</value>
+    </labels>
+    <labels>
+        <fullName>Case_Picklist_Pending</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Case Picklist Pending</shortDescription>
+        <value>Pending</value>
+    </labels>
+    <labels>
+        <fullName>Case_Solved_Since_4_Days</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Case Solved Since 4 Days(In Hours)</shortDescription>
+        <value>16</value>
+    </labels>
+    <labels>
+        <fullName>Case_Tag_Dansk</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Case Tag Dansk</shortDescription>
+        <value>onboarding-dansk</value>
+    </labels>
+    <labels>
+        <fullName>Case_Tag_Eng</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Case Tag Eng</shortDescription>
+        <value>onboarding-eng</value>
+    </labels>
+    <labels>
+        <fullName>Clients</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Clients</shortDescription>
+        <value>Clients</value>
+    </labels>
+    <labels>
+        <fullName>Community_Queue_Owner</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Community Queue Owner</shortDescription>
+        <value>00G7R000004Sk0K</value>
+    </labels>
+    <labels>
+        <fullName>Company_Website</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Company Website</shortDescription>
+        <value>Company Website</value>
+    </labels>
+    <labels>
+        <fullName>CookiePolicy</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CookiePolicy</shortDescription>
+        <value>We use cookies to provide you with the best user experience on our website. This website only uses functional cookies that are essential to keeping our website operational. By using our website, you agree to the use of cookies and to the collection of your browsing information. Read more in our</value>
+    </labels>
+    <labels>
+        <fullName>Cookies</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cookies</shortDescription>
+        <value>Cookies</value>
+    </labels>
+    <labels>
+        <fullName>Country</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Country</shortDescription>
+        <value>Country</value>
+    </labels>
+    <labels>
+        <fullName>Customer_Support_Title</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Customer Support Title</shortDescription>
+        <value>&lt;span style=&quot;font-size: 42px;color: #03224c;padding-top: 40px;padding-left: 10px;line-height: 50px;font-weight: 800;&quot;&gt;Submit a request&lt;/span&gt;&lt;br/&gt;
+&lt;span class=&quot;slds-m-left--small slds-m-top--small&quot; style=&quot;font-size: 24px;line-height: 32px;color: #03224c;font-weight: 800 ;&quot;&gt;Tell us how we can help.&lt;/span&gt;</value>
+    </labels>
+    <labels>
+        <fullName>Description</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Description</shortDescription>
+        <value>Description</value>
+    </labels>
+    <labels>
+        <fullName>DisableOpportunityTrigger</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DisableOpportunityTrigger</shortDescription>
+        <value>true</value>
+    </labels>
+    <labels>
+        <fullName>Document_Key</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Document_Key</shortDescription>
+        <value>Case File ID, Document Key, or Title of the Document</value>
+    </labels>
+    <labels>
+        <fullName>Document_collection</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Document collection</shortDescription>
+        <value>Document collection</value>
+    </labels>
+    <labels>
+        <fullName>EmailAddressForClosedWonOppor</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EmailAddressForClosedWonOppor</shortDescription>
+        <value>finance@penneo.com</value>
+    </labels>
+    <labels>
+        <fullName>FirstFailedCall</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FirstFailedCall</shortDescription>
+        <value>00X2X0000028APsUAM</value>
+    </labels>
+    <labels>
+        <fullName>First_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>First Name</shortDescription>
+        <value>First Name</value>
+    </labels>
+    <labels>
+        <fullName>Forms_and_identity_validation</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Forms and identity validation</shortDescription>
+        <value>Forms and identity validation</value>
+    </labels>
+    <labels>
+        <fullName>Free_Demo_Trial_Reminder_Email_Contact</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Free Demo Trial Reminder Email Contact</shortDescription>
+        <value>00X2X0000028AR2UAM</value>
+    </labels>
+    <labels>
+        <fullName>Free_Demo_Trial_Reminder_Email_Lead</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Free Demo Trial Reminder Email Contact</shortDescription>
+        <value>00X2X0000028AR3UAM</value>
+    </labels>
+    <labels>
+        <fullName>Get_an_easy_fix</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Get an easy fix</shortDescription>
+        <value>Get an easy fix for the most common issues here.</value>
+    </labels>
+    <labels>
+        <fullName>Getting_Started</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Getting Started</shortDescription>
+        <value>Getting Started</value>
+    </labels>
+    <labels>
+        <fullName>Getting_Started_and_Settings</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Getting Started and Settings</shortDescription>
+        <value>Getting Started and Settings</value>
+    </labels>
+    <labels>
+        <fullName>Glossary</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Glossary</shortDescription>
+        <value>Glossary</value>
+    </labels>
+    <labels>
+        <fullName>GoodFeedbackButton</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GoodFeedbackButton</shortDescription>
+        <value>Good, I&apos;m satisfied</value>
+    </labels>
+    <labels>
+        <fullName>HomePageLabel1</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HomePageLabel1</shortDescription>
+        <value>Which Penneo solution do you need help with?</value>
+    </labels>
+    <labels>
+        <fullName>Inbound_Lead_Welcome_Email_Template</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Inbound Lead Welcome Email Template</shortDescription>
+        <value>00X2X0000028APwUAM</value>
+    </labels>
+    <labels>
+        <fullName>Integration</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Integration</shortDescription>
+        <value>Integration</value>
+    </labels>
+    <labels>
+        <fullName>LC_NewOpportunityLayout_Success_Msg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LC_NewOpportunityLayout Success Msg</shortDescription>
+        <value>Opportunity saved successfully.</value>
+    </labels>
+    <labels>
+        <fullName>Last_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Last Name</shortDescription>
+        <value>Last Name</value>
+    </labels>
+    <labels>
+        <fullName>LeadBusinessHours_Disable</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LeadBusinessHours</shortDescription>
+        <value>Yes</value>
+    </labels>
+    <labels>
+        <fullName>LocateCaseId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LocateCaseId</shortDescription>
+        <value>https://penneo.force.com/support/s/article/How-to-locate-your-Case-file-ID</value>
+    </labels>
+    <labels>
+        <fullName>Manage_case_files</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Manage case files</shortDescription>
+        <value>Manage case files</value>
+    </labels>
+    <labels>
+        <fullName>No_Reply_Address</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No Reply Address</shortDescription>
+        <value>noreply@penneo.com</value>
+    </labels>
+    <labels>
+        <fullName>Onboarding_Dansk_After_20_Hours</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Onboarding Dansk After 20 Hours</shortDescription>
+        <value>00X7R000002dsJnUAI</value>
+    </labels>
+    <labels>
+        <fullName>Onboarding_Eng_After_20_Hours</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Onboarding Eng After 20 Hours</shortDescription>
+        <value>00X7R000002dsJsUAI</value>
+    </labels>
+    <labels>
+        <fullName>Operating_Status</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Operating Status</shortDescription>
+        <value>Operating Status</value>
+    </labels>
+    <labels>
+        <fullName>OrderConfirmationPDF_Invalid_Quote_Status</fullName>
+        <categories>OrderConfirmationPDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderConfirmationPDF Invalid Quote Status</shortDescription>
+        <value>Draft;Needs Review;In Review;Rejected</value>
+    </labels>
+    <labels>
+        <fullName>OrderConfirmationPDF_Not_Visible_Error_Message</fullName>
+        <categories>OrderConfirmationPDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderConfirmationPDF Not Visible Error Message</shortDescription>
+        <value>To generate the Order Confirmation PDF the quote cant be in the following stages:
+Draft
+Needs Review
+In Review
+Rejected
+
+Please contact your manager.</value>
+    </labels>
+    <labels>
+        <fullName>Order_Confirmaton_Pdf_Footer</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order Confirmaton Pdf Footer</shortDescription>
+        <value>By signing this proposal the Customer acknowledges that it has read and explicitly accepts the Standard Terms and Data Processing Agreement, (Vers. 5.0.2) available at &lt;a href=&quot;https://penneo.com/terms/&quot; target=&quot;blank&quot;&gt;https://penneo.com/terms&lt;/a&gt;. The Customer also agrees that it will comply with the Standard Terms and Data Processing Agreement. The Customer further agrees that the information specified in this Order Confirmation is correct and can serve as basis for the invoice to be issued by Penneo to the Customer.</value>
+    </labels>
+    <labels>
+        <fullName>Penneo_Admin_Account</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Penneo Admin Account</shortDescription>
+        <value>Penneo Admin Account</value>
+    </labels>
+    <labels>
+        <fullName>Penneo_Signer_Account</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Penneo Signer Account</shortDescription>
+        <value>Penneo Signer Account</value>
+    </labels>
+    <labels>
+        <fullName>Penneo_User_Account</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Penneo User Account</shortDescription>
+        <value>Penneo User Account</value>
+    </labels>
+    <labels>
+        <fullName>Priority</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Priority</shortDescription>
+        <value>Priority</value>
+    </labels>
+    <labels>
+        <fullName>Privacy</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Privacy</shortDescription>
+        <value>Privacy</value>
+    </labels>
+    <labels>
+        <fullName>Recaptcha_Domain</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recaptcha Domain</shortDescription>
+        <value>https://penneo.my.site.com/support/apex/RecaptchaGoogle</value>
+    </labels>
+    <labels>
+        <fullName>Recaptcha_Site_Key</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recaptcha Site Key</shortDescription>
+        <value>6LdprXEmAAAAAJYh1Wq62BsKscLO78OfkDHvAbww</value>
+    </labels>
+    <labels>
+        <fullName>Remote_Support1</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Remote Support1</shortDescription>
+        <value>&lt;html&gt; &lt;style&gt; h1{ font-size: 32px; } h3{ font-size: 24px; font-weight: 600; } .button_container{ margin: 0 0 30px; } .custom_buton{ background-color: #34d298; font-size: 20px; width: 211px; height: 48px; border: none; color: white; border-radius: 4px; margin-bottom: 15px; } .custom_buton:hover{ background-color: white; color: #34d298; transition: background-color .12s ease-in-out, border-color .12s ease-in-out, color .15s ease-in-out; transition-property: background-color, border-color, color; transition-duration: 0.12s, 0.12s, 0.15s; transition-timing-function: ease-in-out, ease-in-out, ease-in-out; transition-delay: 0s, 0s, 0s; border: none; } .customLink{ color: #03224C; font-weight: 600; } .top_div{  line-height: 1.5; font-family: &quot;Abel&quot;, Arial, sans-serif; font-size: 18px; } .custom_font_h3{ font-weight:600; margin-bottom: 20px; } .remote_support{ margin-bottom: 40px; } @media all and (max-width: 767px) { .top_div{ margin-left: 5px; } } &lt;/style&gt; &lt;body&gt;</value>
+    </labels>
+    <labels>
+        <fullName>Remote_Support2</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Remote Support2</shortDescription>
+        <value>&lt;div class=&quot;top_div&quot;&gt;  &lt;div class=&quot;remote_support&quot;&gt; &lt;h1&gt;Remote support&lt;/h1&gt; &lt;/div&gt; &lt;div&gt; &lt;h3 class=&quot;custom_font_h3&quot;&gt;We provide remote support if you need help using Penneo&lt;/h3&gt; &lt;/div&gt; &lt;div&gt; If you need help signing, we can offer you the possibility of remote support, where a consultant from Penneo logs in to your computer and helps you with the process.&lt;br&gt;&lt;br&gt; You just need to download one of the Quicksupport-client shown below, and a Penneo consultant will be able to connect to your computer and remotely control it until one of you disconnects.&lt;br&gt;&lt;br&gt; If you wish to get remote support or you have any questions about it, you are very welcome to contact our support team at: &lt;strong&gt;&lt;a href=&quot;mailto:support@penneo.com&quot; class=&quot;customLink&quot;&gt;support@penneo.com&lt;/a&gt;&lt;/strong&gt;&lt;br&gt;&lt;br&gt; &lt;b&gt;Please notice:&lt;/b&gt;</value>
+    </labels>
+    <labels>
+        <fullName>Remote_Support3</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Remote Support3</shortDescription>
+        <value>You need a prior agreement on remote support in order for us to assist you.&lt;br&gt;&lt;br&gt;&lt;br&gt; &lt;strong&gt;Click below to download our Quicksupport-client:&lt;/strong&gt;&lt;br&gt;&lt;br&gt; Windows: &lt;a href=&quot;http://cdn.penneo.com/support/Penneo_Fjernsupport.exe&quot; class=&quot;customLink&quot;&gt;TeamViewer remote support&lt;/a&gt;&lt;br&gt;&lt;br&gt; Mac and Linux: &lt;a href=&quot;https://get.teamviewer.com/penneosupport&quot; class=&quot;customLink&quot;&gt;TeamViewer remote support&lt;/a&gt; &lt;/div&gt; &lt;/div&gt;   &lt;/body&gt; &lt;/html&gt;</value>
+    </labels>
+    <labels>
+        <fullName>Risk_assestment</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Risk assestment</shortDescription>
+        <value>Risk assessment</value>
+    </labels>
+    <labels>
+        <fullName>Role</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Role</shortDescription>
+        <value>Role</value>
+    </labels>
+    <labels>
+        <fullName>SaleManagerEmailTemplateId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SaleManagerEmailTemplateId</shortDescription>
+        <value>00X2X0000028AaiUAE</value>
+    </labels>
+    <labels>
+        <fullName>SecondFailedCall</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SecondFailedCall</shortDescription>
+        <value>00X2X0000028APvUAM</value>
+    </labels>
+    <labels>
+        <fullName>Security_Framework</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Security Framework</shortDescription>
+        <value>Security Framework</value>
+    </labels>
+    <labels>
+        <fullName>Security_and_data_retention</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Security and data retention</shortDescription>
+        <value>Security and data retention</value>
+    </labels>
+    <labels>
+        <fullName>See_more_guides</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>See more guides</shortDescription>
+        <value>See more guides</value>
+    </labels>
+    <labels>
+        <fullName>Select_Country</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Select Country</shortDescription>
+        <value>Select Country</value>
+    </labels>
+    <labels>
+        <fullName>Select_Priority</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Select Priority</shortDescription>
+        <value>Select Priority</value>
+    </labels>
+    <labels>
+        <fullName>Select_Role</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Select Role</shortDescription>
+        <value>Select Role</value>
+    </labels>
+    <labels>
+        <fullName>Select_Type</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Select Type</shortDescription>
+        <value>Select Type</value>
+    </labels>
+    <labels>
+        <fullName>Select_a_Solution</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Select a Solution</shortDescription>
+        <value>Select a Solution</value>
+    </labels>
+    <labels>
+        <fullName>SendEmailToChild</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SendEmailToChild</shortDescription>
+        <value>No</value>
+    </labels>
+    <labels>
+        <fullName>Send_Email_After_20_Pending_Hours</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Send Email After 20 Pending Hours</shortDescription>
+        <value>16</value>
+    </labels>
+    <labels>
+        <fullName>Send_Email_To_Owner_4_Hours</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Send Email To Owner 4 Hours</shortDescription>
+        <value>4</value>
+    </labels>
+    <labels>
+        <fullName>Send_out_case_files</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Send out case files</shortDescription>
+        <value>Send out case files</value>
+    </labels>
+    <labels>
+        <fullName>Signing</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Signing</shortDescription>
+        <value>Signing</value>
+    </labels>
+    <labels>
+        <fullName>Something_Went_Wrong</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Something Went Wrong?</shortDescription>
+        <value>Something went wrong?</value>
+    </labels>
+    <labels>
+        <fullName>Subject</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Subject</shortDescription>
+        <value>Subject</value>
+    </labels>
+    <labels>
+        <fullName>Submit</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Submit</shortDescription>
+        <value>SUBMIT</value>
+    </labels>
+    <labels>
+        <fullName>Submitted_Country</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Submitted Country</shortDescription>
+        <value>Country</value>
+    </labels>
+    <labels>
+        <fullName>Submitted_Solution</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Submitted Solution</shortDescription>
+        <value>Penneo Product</value>
+    </labels>
+    <labels>
+        <fullName>Supplied_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Supplied Name</shortDescription>
+        <value>Name</value>
+    </labels>
+    <labels>
+        <fullName>Support_Address</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Support Address</shortDescription>
+        <value>support@penneo.com</value>
+    </labels>
+    <labels>
+        <fullName>Terms</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Terms</shortDescription>
+        <value>Terms</value>
+    </labels>
+    <labels>
+        <fullName>Troubleshooting</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Troubleshooting</shortDescription>
+        <value>Troubleshooting</value>
+    </labels>
+    <labels>
+        <fullName>Type</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Type</shortDescription>
+        <value>Type of Request</value>
+    </labels>
+    <labels>
+        <fullName>UpdateCaseFeedbackButton</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>UpdateCaseFeedbackButton</shortDescription>
+        <value>Update</value>
+    </labels>
+    <labels>
+        <fullName>Upload_File</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Upload File</shortDescription>
+        <value>Attact document(Max 5MB)</value>
+    </labels>
+    <labels>
+        <fullName>Urgent_Case_Last_Update_Since_4_Hours</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Urgent Case Last Update Since 4 Hours</shortDescription>
+        <value>00X7R000002dsHmUAI</value>
+    </labels>
+    <labels>
+        <fullName>Verify_Document</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Verify Document</shortDescription>
+        <value>Verify Document</value>
+    </labels>
+    <labels>
+        <fullName>WelcomeEmail</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WelcomeEmail</shortDescription>
+        <value>00X2X0000028APuUAM</value>
+    </labels>
+    <labels>
+        <fullName>WelcomeEmailContact</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WelcomeEmailContact</shortDescription>
+        <value>00X2X0000028APqUAM</value>
+    </labels>
+    <labels>
+        <fullName>Your_Email</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Your Email</shortDescription>
+        <value>Email</value>
+    </labels>
+    <labels>
+        <fullName>commentCaseFeedback</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>commentCaseFeedback</shortDescription>
+        <value>Add a comment about the quality of support you received (optional):</value>
+    </labels>
+    <labels>
+        <fullName>errorMessageCaseFeedback</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>errorMessageCaseFeedback</shortDescription>
+        <value>Error: No Case details found for this caseId.</value>
+    </labels>
+    <labels>
+        <fullName>feedbackAlreadySubmitted</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>feedbackAlreadySubmitted</shortDescription>
+        <value>You have already given feedback for this case.</value>
+    </labels>
+    <labels>
+        <fullName>rateCaseFeedback</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>rateCaseFeedback</shortDescription>
+        <value>How would you rate the support you received?</value>
+    </labels>
+    <labels>
+        <fullName>searchHelpText</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>searchHelpText</shortDescription>
+        <value>Type here and press enter to read more</value>
+    </labels>
+    <labels>
+        <fullName>successMsgCaseFeedback</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>successMsgCaseFeedback</shortDescription>
+        <value>Thank you. Your feedback has been updated successfully.</value>
+    </labels>
+    <labels>
+        <fullName>thirdFailedCall</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>thirdFailedCall</shortDescription>
+        <value>00X2X0000028APrUAM</value>
+    </labels>
+</CustomLabels>

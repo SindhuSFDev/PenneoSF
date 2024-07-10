@@ -1,0 +1,5 @@
+<design:component>
+	<design:attribute name="topicID" dataSource="apex://DataCategoryPicklist"/>
+    <design:attribute name="totalRecordsToShow" />
+    <design:attribute name="showMessage" />
+</design:component>

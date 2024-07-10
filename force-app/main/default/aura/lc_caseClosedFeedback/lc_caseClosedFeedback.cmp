@@ -1,0 +1,62 @@
+<!--
+ - Created by ayushi.d@cloudroute.in on 26-10-2020.
+ -->
+
+<aura:component description="lc_caseClosedFeedback"
+    implements="lightning:isUrlAddressable,forceCommunity:availableForAllPageTypes,flexipage:availableForAllPageTypes"
+    access="global" controller="lc_caseClosedFeedbackCtrl">
+    <aura:attribute name="spinner" type="Boolean" default="false" />
+    <aura:attribute name="showButtons" type="Boolean" default="false" />
+    <aura:attribute name="showMessage" type="Boolean" default="false" />
+    <aura:attribute name="caseId" type="String" />
+    <aura:attribute name="responseClicked" type="String" />
+    <aura:attribute name="message" type="String" />
+    <aura:attribute name="comments" type="String" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <c:ApexService aura:id="service" />
+
+    <aura:if isTrue="{!v.spinner}">
+        <div>
+            <lightning:spinner alternativeText="Loading" variant="brand" class="spins" />
+        </div>
+    </aura:if>
+
+    <lightning:card>
+        <aura:if isTrue="{!v.showButtons}">
+            <p class="slds-p-horizontal_small slds-text-heading_small">{!$Label.c.rateCaseFeedback}</p>
+            <lightning:layout multipleRows="true" class=" slds-grid slds-p-around_small slds-wrap">
+                <lightning:layoutItem padding="medium" smallDeviceSize="12" mediumDeviceSize="12" largeDeviceSize="3"
+                    size="12" >
+                    <lightning:button label="{!$Label.c.GoodFeedbackButton}" iconName="utility:like" iconPosition="left"
+                        aura:id="goodBtn" class="btnCls slds-m-bottom_small" onclick="{!c.saveGoodResponse}"  />
+                </lightning:layoutItem>
+                <lightning:layoutItem padding="medium" smallDeviceSize="12" mediumDeviceSize="12" largeDeviceSize="3"
+                    size="12">
+                    <lightning:button label="{!$Label.c.BadFeedbackButton}" iconName="utility:dislike"
+                        iconPosition="left" aura:id="badBtn" class="btnCls slds-m-bottom_small" onclick="{!c.saveBadResponse}" />
+                </lightning:layoutItem>
+            </lightning:layout>
+            <p class="slds-p-horizontal_small slds-text-heading_small">{!$Label.c.commentCaseFeedback}</p>
+            <lightning:layout multipleRows="true" class="slds-p-around_small">
+                <lightning:layoutItem padding="medium" smallDeviceSize="12" mediumDeviceSize="12" largeDeviceSize="12"
+                    size="12">
+                    <lightning:textarea label="{!$Label.c.commentCaseFeedback}" autocomplete="off" value="{!v.comments}"
+                        variant="label-hidden" class="textareaHeight" />
+                </lightning:layoutItem>
+            </lightning:layout>
+            <div align="right" class="slds-p-right_large">
+                <lightning:button label="{!$Label.c.UpdateCaseFeedbackButton}" variant="brand"
+                    onclick="{!c.saveResponse}" />
+            </div>
+        </aura:if>
+
+        <aura:if isTrue="{!v.showMessage}">
+            <p class="slds-p-horizontal_small slds-align_absolute-center"
+                style="font-size:20px; font-weight: 600; color: #00b67a">
+                {!v.message}
+            </p>
+        </aura:if>
+    </lightning:card>
+
+</aura:component>

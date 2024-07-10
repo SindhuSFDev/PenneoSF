@@ -1,0 +1,45 @@
+.THIS .ArticlesSize{
+    max-height: 150px;
+    overflow-y: scroll;
+    width: 100%;
+    font-family: Nunito !important;
+}
+
+.THIS ::placeholder {
+    color: #B4BFD3;
+    font-size: 16px;
+    font-family: Nunito !important;
+}
+
+.THIS .childLabelStyling{
+    font-size: 20px;
+    color: #03224c;
+    line-height: 20px;
+    font-weight: 500;
+    font-family: Nunito !important;
+}
+
+.THIS a{
+    font-size: 20px;
+    color: #03224c;
+    line-height: 20px;
+    font-weight: 500;
+    font-family: Nunito !important;
+    text-decoration: none;
+}
+
+.THIS .childLabelStyling:hover{
+    font-size: 20px;
+    font-family: Nunito !important;
+    color: #00c18d;
+    line-height: 20px;
+    font-weight: 500;
+}
+.THIS .slds-breadcrumb a:hover{
+    font-size: 20px;
+    color: #00c18d;
+    line-height: 20px;
+    font-weight: 500;
+    font-family: Nunito !important;
+    text-decoration: none;
+}

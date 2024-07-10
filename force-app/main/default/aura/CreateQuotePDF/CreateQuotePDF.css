@@ -1,0 +1,18 @@
+.THIS.slds-modal__content{
+    min-height: 75% !important;
+    overflow:auto !important;
+}
+
+.THIS .tableHeight{
+    height: 75vh;
+    overflow: auto;
+}
+.THIS .tableClass th{
+    background: white;
+    color: #4f4e4d;
+    font-weight: 400;
+    padding: 0.5 rem;
+}
+.THIS .tableClass td{
+    padding: 0.5rem;
+}

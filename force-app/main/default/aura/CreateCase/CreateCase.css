@@ -1,0 +1,126 @@
+.THIS textarea{
+    height: 6rem;
+}
+
+.THIS .onhover{
+  color: #03224c;
+}
+
+.THIS .onhover:hover{
+    color: #34d298;
+    cursor: pointer;
+}
+.THIS.reCaptchaSmall{
+    height: 200px;
+}
+.THIS.reCaptchaBig{
+    height: 500px;
+}
+
+.THIS .DescriptionTxt .slds-form-element__label{
+    display:none;
+}
+
+.THIS textarea::placeholder {
+    font-weight: 600;
+    font-style:italic;
+  }
+
+.THIS .contentStyle{
+    font-size: 12px;
+    line-height: 16px;
+    color: #03224c;
+    font-weight: 600;
+}
+
+.THIS .slds-form-element__label{
+    font-size: 12px !important;
+    line-height: 16px !important;
+    color: #03224c !important;
+    font-weight: 600 !important;
+}
+
+.THIS .cardHoverStyle{
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 20px;
+    color: #03224c;
+}
+
+.THIS .cardHoverStyle:hover{
+    color: #34d298;
+}
+
+.THIS .suggestionStyle{
+    border-bottom: 1px solid #ddd;
+    font-size: 12px;
+    line-height: 16px;
+    color: #03224c;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.THIS .infoDiv{
+    position: relative;
+}
+
+.THIS .infoIcon{
+    position: absolute;
+    top: 4px;
+    left: 317px;
+}
+
+.THIS .infoContent{
+    width: 150px;
+    background: #fff;
+    border: 1px solid #f3f3f3;
+    padding: 5px;
+    position: absolute;
+    top: 50px;
+    left: 235px;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s ease-in-out all;
+}
+
+.THIS .hoverIcon:hover .infoContent{
+    top: 20px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.THIS .infoContent{
+    font-size: 11px;
+    color: #000;
+}
+
+.THIS .removeFocus:focus{
+    outline : none;
+}
+
+@media screen and (max-width: 600px) {
+    .THIS body.popupview #popup-inner {
+      overflow: auto !important;
+    }
+  }
+
+.THIS .iFrame {
+    position: relative;
+    z-index : 1;
+}
+
+.THIS .iFrame .submitForm{
+    position : relative;
+    left : 450px;
+}
+
+.THIS .iFrame iframe{
+    height: 480px;
+    width: 400px;
+    position: absolute;
+    transform:scale(1.0);
+    -webkit-transform:scale(1.0);
+    transform-origin:0 0;
+    -webkit-transform-origin:0 0;
+}

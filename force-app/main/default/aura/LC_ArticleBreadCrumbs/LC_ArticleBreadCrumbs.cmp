@@ -1,0 +1,31 @@
+<!--
+ - Created by CloudRoute on 14-12-2021.
+ -->
+
+<aura:component description="LC_ArticleBreadCrumbs"
+                implements="forceCommunity:availableForAllPageTypes,lightning:isUrlAddressable,flexipage:availableForAllPageTypes"
+                access="global" controller="LC_ArticleBreadcrumbCtrl">
+    <c:ApexService aura:id="service"/>
+
+    <!--Handlers -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <!-- Attributes -->
+    <aura:attribute name="breadcrumbCollection" type="Object"/>
+    <aura:attribute type="String" name="articleName"/>
+    <aura:attribute name="relatedArticle" type="List"/>
+    <aura:attribute name="language" type="String"/>
+    <aura:attribute name="articlesList" type="List"/>
+    <aura:attribute name="redirectUrl" type="String"/>
+
+    <!-- BreadCrumb start -->
+    <lightning:breadcrumbs>
+        <lightning:breadcrumb label="Help Center" onclick="{! c.returnToHome }" class="childLabelStyling"/>
+        <aura:iteration items="{! v.articlesList }" var="breadcrumb">
+            <lightning:breadcrumb label="{! breadcrumb.label }" onclick="{! c.navigateTo }" name="{! breadcrumb.name }"
+                                  class="childLabelStyling"/>
+        </aura:iteration>
+    </lightning:breadcrumbs>
+    <!--Breadcrumb stop -->
+
+</aura:component>

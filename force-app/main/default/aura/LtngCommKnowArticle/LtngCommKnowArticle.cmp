@@ -1,0 +1,75 @@
+<aura:component
+                implements="forceCommunity:availableForAllPageTypes,lightning:isUrlAddressable,flexipage:availableForAllPageTypes"
+                access="global"
+                controller="KnowArticleController">
+
+    <aura:attribute name="topicID" type="String"/>
+    <aura:attribute name="showSpinner" type="Boolean" default="false"/>
+    <aura:attribute name="language" type="String"/>
+    <aura:attribute name="totalRecordsToShow" type="Integer" default="4"/>
+    <aura:attribute name="listOfKnowArticles" type="List" access="global"/>
+    <aura:attribute name="redirectUrl" type="String"/>
+    <aura:attribute name="seeMoreGuides" type="String" default="See more guides"/>
+    <aura:attribute name="showAll" type="Boolean" default="false"/>
+    <aura:attribute name="showAllTrue" type="String"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <aura:if isTrue="{!v.showSpinner}">
+        <lightning:spinner alternativeText="Loading" size="large"/>
+    </aura:if>
+
+    <lightning:layout class="slds-grid slds-grid_vertical-align-center slds-wrap paddingTop">
+        <lightning:layoutItem size="12">
+            <div class="slds-align_absolute-center slds-text-align_center headingTwo">{!$Label.c.HomePageLabel1}</div>
+            <aura:iteration items="{!v.listOfKnowArticles}" var="category">
+                <aura:if isTrue="{!and(not(equals(category.parentLabel, 'Glossary')), not(equals(category.parentLabel, 'Bibliotek')))}">
+                    <aura:if isTrue="{!and(not(equals(category.parentLabel, 'Security Framework')), not(equals(category.parentLabel, 'Sikkerhed')))}">
+                        <aura:if isTrue="{!and(not(equals(category.parentLabel, 'Troubleshooting')), not(equals(category.parentLabel, 'Fejlsøgning')))}">
+                                <div class="slds-col slds-text-align_center slds-m-bottom_xx-small headingTwo">
+                                    <a href="{!v.redirectUrl+category.parentName+v.showAllTrue}" style="color: #03224c;">
+                                        {!category.parentLabel}
+                                    </a>
+                                </div>
+                                <div class="slds-m-left__small slds-m-right__small slds-m-bottom__small" style="max-width: 1140px;margin: 0 auto;">
+                                    <lightning:layout class="slds-wrap">
+                                        <aura:iteration items="{!category.innerClass}" var="child">
+                                            <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="12" largeDeviceSize="4" class="cardHoverStyle">
+                                                <aura:if isTrue="{!and(not(equals(category.parentLabel, 'Troubleshooting')), not(equals(category.parentLabel, 'Fejlsøgning')))}">
+                                                    <div data-value="{!v.redirectUrl+ child.childName}" onclick="{!c.navigateToNew}">
+                                                        <lightning:card class="slds-m-vertical--small BoxClass">
+                                                            <div class=" slds-grid">
+                                                                <div class="slds-size--12-of-12 slds-align_absolute-center">
+                                                                    <div class="slds-text-align_center slds-m-around--small">
+                                                                        <div class="slds-size--12-of-12 slds-m-bottom_x-small">
+                                                                            <img src='{!child.imageURL}' width="30" height="30"/>
+                                                                        </div>
+
+                                                                        <div class="slds-size--12-of-12 slds-align_absolute-center onhover child_label" data-value="{!v.redirectUrl+ child.childName}" title="{!child.childLabel}" onclick="{!c.navigateToNew}">
+                                                                            <h3 class="allCategoryHeading">{!child.childLabel}</h3>
+                                                                        </div>
+                                                                        <div class="slds-size--12-of-12 slds-p-around_small slds-align_absolute-center">
+                                                                            <p class="allCategoryPara">{!child.Descrtiption}</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </lightning:card>
+                                                    </div>
+                                                </aura:if>
+                                            </lightning:layoutItem>
+                                        </aura:iteration>
+
+                                    </lightning:layout>
+                                </div>
+                            </aura:if>
+                        </aura:if>
+                    </aura:if>
+            </aura:iteration>
+
+        </lightning:layoutItem>
+    </lightning:layout>
+
+    <c:ApexService aura:id="service"/>
+
+</aura:component>

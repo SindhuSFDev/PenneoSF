@@ -1,0 +1,32 @@
+<aura:component
+                implements="forceCommunity:availableForAllPageTypes,lightning:isUrlAddressable,flexipage:availableForAllPageTypes"
+                access="global" controller="LC_ArticleViewCommunityCtrl">
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <c:ApexService aura:id="service"/>
+    
+    <aura:attribute type="List" name="articles"/>
+    <aura:attribute type="String" name="articleName"/>
+    <aura:attribute name="redirectUrl" type="String"/>
+    <aura:attribute name="language" type="String"/>
+    
+    <lightning:layout multipleRows="true">
+        <lightning:layoutItem size="12">
+            <span onkeypress="{!c.showSearchArticlePage}">
+                <lightning:input type="search" name="searchKey" aura:id="searchKey" placeholder="{!$Label.c.searchHelpText}" style="border-color: #B4BFD3;"/>
+            </span>
+        </lightning:layoutItem>
+        <lightning:layoutItem class="ArticlesSize">
+            <aura:iteration var="art" items="{!v.articles}">
+                <lightning:layoutItem size="12" padding="around-small">
+                    <div data-value="{!v.redirectUrl + art.UrlName}" onclick="{!c.TitleSelect}"
+                         class="childLabelStyling"
+                         style="font-family: Nunito !important">
+                        <a href="{!v.redirectUrl + art.UrlName}">{!art.Title}
+                        </a>
+                    </div>
+                </lightning:layoutItem>
+            </aura:iteration>
+        </lightning:layoutItem>
+    </lightning:layout>
+</aura:component>

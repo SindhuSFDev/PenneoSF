@@ -1,0 +1,217 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes,flexipage:availableForAllPageTypes" access="global"
+                controller="CreateCaseController">
+    
+    <aura:attribute type="String" name="caseId"/>
+    <aura:attribute type="String" name="randomString"/>
+    <aura:attribute name="roleList" type="List"/>
+    <aura:attribute name="typeList" type="List"/>
+    <aura:attribute name="priorityList" type="List"/>
+    <aura:attribute name="countryList" type="List"/>
+    <aura:attribute name="language" type="String"/>
+    <aura:attribute name="formMessage" type="String"/>
+    <aura:attribute name="reCaptchaSiteKey" type="String"/>
+    <aura:attribute name="approvedHost" type="String"/>
+    <aura:attribute name="isDisable" type="boolean" default="true"/>
+    <aura:attribute name="submittedCountryList" type="List"/>
+    <aura:attribute name="langList" type="List"/>
+    <aura:attribute name="langVals" type="List"/>
+    <aura:attribute name="solutionList" type="List"/>
+    <aura:attribute type="Case" name="caseObj" default="{
+                                                        'sobjectType': 'Case',
+                                                        'SuppliedCompany': '',                                                
+                                                        'SuppliedEmail': '',
+                                                        'First_Name__c': '',
+                                                        'Last_Name__c':'',
+                                                        'Role__c':'',
+                                                        'Type' : '',
+                                                        'Priority':'',
+                                                        'Subject' : '',
+                                                        'Description' : '',
+                                                        'SuppliedName' : '',
+                                                        'SubmittedCountry__c' : '',
+                                                        'SubmittedSolution__c' : '',
+                                                        'Languages_Supported__c' : '',
+                                                        'Document_Key__c' : '',
+                                                        'Case_Language__c' : '',
+                                                        'URL_Issue__c' : '',
+                                                        }"/>
+    
+    <aura:attribute name="disableForInternal" type="Boolean" default="false"/>
+    <aura:attribute name="showSuggestedArticles" type="Boolean" default="false"/>
+    <aura:attribute name="keySearch" type="String"/>
+    <aura:attribute name="listOfKnowArticles" type="List" access="global"/>
+    <aura:attribute name="redirectUrl" type="String"/>
+    <aura:attribute name="showFileNames" type="Boolean" default="false"/>
+    <aura:attribute type="List" name="fileNames"/>
+    <aura:attribute name="showSuggestions" type="Boolean" default="false"/>
+    <aura:attribute type="string" name="subjectSuggestion"/>
+    <aura:attribute type="List" name="articlesList"/>
+    <aura:attribute name="showSpinner" type="Boolean" default="false"/>
+    <aura:attribute name="showDocKey" type="Boolean" default="false"/>
+    <aura:attribute type="List" name="fileIds"/>
+    <aura:attribute name="caseFieldId" type="String" default="caseField"/>
+    <aura:attribute name="offsetNumber" type="Integer" default="1"/>
+    <aura:attribute name="showHelpText" type="boolean" default="false"/>
+    <aura:attribute name="langMap" type="Map" default="{'en_US': {'Name' : 'Name','Email' : 'Email','Country' : 'Country','Penneo_Product' : 'Penneo Product','URL__Problem' : 'URL where you are experiencing an issue',
+                                                       'Subject' : 'Subject','Description' : 'Description','Description_Placeholder' : 'Please include any screenshots of the issue you are encountering.This helps us a lot with troubleshooting so we can service you faster.','Lang_Supported':'I would like to receive support in the following language(s):','Attachments' : 'Attachments','Select_Country' : 'Select Country','Select_a_Solution' : 'Select a solution','Submit_Request' : 'Submit a request','Help' : 'Tell us how we can help.','Submit_Form' : 'Submit','Document_Key' : 'Case File ID, Document Key, or Title of the Document','Required_Error_Message' :'Complete this field.','Select_Language' :'Select Language' , 'DocHelpText' : {'The':'The ', 'link' : 'Case File ID', 'othertext':' is the number that appears at the end of the URL when viewing a case file.'}},
+                                                       'da': {'Name' : 'Navn','Email' : 'E-mailadresse','Country' : 'Land','Penneo_Product' : 'Penneo produkt','URL__Problem' : 'URL link til der hvor du oplever problemet','Subject' : 'Emne','Description' : 'Beskrivelse','Description_Placeholder' : 'Inkludér venligst skærmbillede af det problem du oplever. Det hjælper os til hurtigere at finde frem til en løsning.','Lang_Supported':'Jeg vil gerne modtage support på følgende sprog:','Attachments' : 'Vedhæft fil','Select_Country' : 'Vælg land','Select_a_Solution' : 'Vælg en løsning','Submit_Request' : 'Indsend en anmodning','Help' : 'Fortæl os hvordan vi kan hjælpe','Submit_Form' : 'INDSEND','Document_Key' : 'Case File ID, Dokument nøgle, eller navnet på dokumentet','Required_Error_Message' :'Udfyld dette felt.','Select_Language' :'Vælg sprog','DocHelpText' : {'The':'', 'link':'Case file ID', 'othertext':' er det nummer, du kan se i slutningen af webadressen, når du har en forsendelse åben.'}},
+                                                       'French': {'Name' : 'Nom','Email' : 'E-mail','Country' : 'Pays','Penneo_Product' : 'Penneo Product','URL__Problem' : 'l\'URL où vous rencontrez un problème','Subject' : 'Sujet','Description' : 'Description','Description_Placeholder' : 'Veuillez inclure des captures d\'écran du problème que vous rencontrez. Cela nous aide à résoudre les problèmes et à vous servir plus rapidement.','Lang_Supported':'Je souhaite recevoir de laide dans la ou les langues suivantes :','Attachments' : 'Pièces jointes','Select_Country' : 'Sélectionnez un pays','Select_a_Solution' : 'Sélectionnez une solution','Submit_Request' : 'Soumettez une demande','Help' : 'Dites-nous comment nous pouvons vous aider.','Submit_Form' : 'SOUMETTRE','Document_Key' : 'Case File ID, Document Key ou Titre du Document','Required_Error_Message' :'Complétez ce champ.','Select_Language' :'Choisir la langue','DocHelpText' : {'The':'Le ', 'link' : 'Case File ID', 'othertext': ' est le numéro qui apparaît à la fin de lURL lors de la consultation dun dossier.'}},
+                                                       'Dutch': {'Name' : 'Naam','Email' : 'E-mail','Country' : 'Land','Penneo_Product' : 'Penneo Product','URL__Problem' : 'De URL waar u een probleem ondervindt','Subject' : 'Onderwerp','Description' : 'Beschrijving','Description_Placeholder' : 'Voeg schermafbeeldingen toe van het probleem dat u ondervindt. Dit helpt ons bij het oplossen van problemen, zodat we u sneller van dienst kunnen zijn.','Lang_Supported':'Ik wil graag ondersteuning in de volgende taal/talen:','Attachments' : 'Bijlagen','Select_Country' : 'Selecteer Land','Select_a_Solution' : 'Selecteer een Product','Submit_Request' : 'Een verzoek indienen','Help' : 'Vertel ons hoe wij jou kunnen helpen.','Submit_Form' : 'Indienen','Document_Key' : 'Case File ID, Document Key of Titel van het Document','Required_Error_Message' :'Vul dit veld in.','Select_Language' :'Selecteer taal','DocHelpText' : {'The' : 'De ', 'link' : ' Case File ID', 'othertext': ' is het nummer dat je kan terugvinden aan het einde van de URL wanneer je een dossierbestand bekijkt.'}},
+                                                       'Norwegian': {'Name' : 'Navn', 'Email' : 'Email', 'Country' : 'Land', 'Penneo_Product' : 'Penneo Product','URL__Problem' : 'URL link til der hvor du opplever problemet',
+                                                       'Subject' : 'Emne', 'Description' : 'Beskrivelse','Description_Placeholder' : 'Inkluder vennligst skjermbildet av problemet du opplever. Det hjelper oss til hurtigere finne frem til en løsning.', 'Lang_Supported' : 'Jeg ønsker å motta støtte på følgende språk:', 'Attachments' : 'Vedheft fil','Select_Country' : 'Velg land','Select_a_Solution' : 'Velg en løsning','Submit_Request' : 'Innsend en forespørsel','Help' : 'Fortell oss hvordan vi kan hjelpe.','Submit_Form' : 'Innsend','Document_Key' : 'Case File ID, Dokument nøkkel, or Tittel på Dokumentet','Required_Error_Message' :'Utfyll dette feltet.','Select_Language' :'Velg språk','DocHelpText' : {The : 'Denne ', 'link': 'Case File ID', 'othertext' : ' er nummeret som oppstår på slutten av URL når man ser på forsendelsen.'}},
+                                                       'Swedish' : {'Name' : 'Namn',  'Email' : 'E-postadress', 'Country' : 'Land', 'Penneo_Product' : 'Penneo Produkt','URL__Problem' : 'URL-länken där du upplever problemet',
+                                                       'Subject' : 'Ämne', 'Description' : 'Beskrivning','Description_Placeholder' : 'Vänligen inkludera skärmbilder av det problem du upplever. Det hjälper oss att hitta en lösning mycket fortare. ', 'Lang_Supported' : 'Jag skulle vilja få support på följande språk:', 'Attachments' : 'Bilagor','Select_Country' : 'Välj Land','Select_a_Solution' : 'Välj en lösning','Submit_Request' : 'Skicka en förfrågan','Help' : 'Berätta för oss hur vi kan hjälpa dig.','Submit_Form' : 'SKICKA','Document_Key' : 'Försändelse ID, Dokumentnyckel, eller Titeln på dokumentet','Required_Error_Message' :'Fyll i detta fält.','Select_Language' :'Välj språk','DocHelpText' : {'The' : '', 'link' : 'Försändelse ID', 'othertext' : ' är det nummer du kan se i slutet av webbadressen när du har en försändelse öppen.'}},
+                                                       'Finnish' : {'Name' : 'Nimi',  'Email' : 'Sähköposti', 'Country' : 'Maa', 'Penneo_Product' : 'Penneo_Tuote','URL__Problem' : 'URL where you are experiencing an issue',
+                                                       'Subject' : 'Aihe', 'Description' : 'Kuvaus', 'Lang_Supported' : 'Haluaisin saada tukea seuraavilla kielillä:', 'Attachments' : 'Liitteet','Select_Country' : 'Select Country','Select_a_Solution' : 'Select a solution', 'DocHelpText' : {'The' : '', 'link' : 'Case File ID', 'othertext' : ' is the number that appears at the end of the URL when viewing a case file.'}}
+                                                       }
+                                                       " />
+    <aura:attribute name="langSelected" type="Object"/>
+    <aura:attribute name="defaultLanguage" type="String"/>
+    
+    <aura:attribute name="siteNotAvaiable" type="Boolean" default="false"/>
+    
+    <ltng:require scripts="{!join(',',$Resource.jquery)}"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    
+    <aura:if isTrue="{!v.siteNotAvaiable}">
+        <!-- <lightning:layout> -->
+        <div class="slds-size_12-of-12 slds-wrap slds-grid">
+            <div class="slds-size_12-of-12 slds-large-size--12-of-12 slds-p-around--large" style="text-align: center;">
+                <p style="color:rgb(63, 153, 241);padding-left: 20px;font-size: 24px;font-weight: 600;margin-bottom: 20px;">The form is currently unavailable. Please submit your requests via email at <a href = "mailto: support@penneo.com">support@penneo.com</a></p>
+            </div>
+        </div>
+        <!-- </lightning:layout> -->
+        <aura:set attribute="else">
+            <aura:if isTrue="{!v.showSpinner}">
+                <lightning:spinner alternativeText="Loading" size="medium"/>
+            </aura:if>
+            
+            
+            <lightning:layout>
+                <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="12" largeDeviceSize="12">
+                    <div class="slds-m-top--small">
+                        <!-- <aura:unescapedHtml value="{!$Label.c.Customer_Support_Title}"/> -->
+                        <span style="font-size: 42px;color: #03224c;padding-top: 40px;padding-left: 10px;line-height: 50px;font-weight: 800;">{!v.langSelected.Submit_Request}</span><br/>
+                        <span class="slds-m-left--small slds-m-top--small" style="font-size: 24px;line-height: 32px;color: #03224c;font-weight: 800 ;">{!v.langSelected.Help}</span>
+                    </div>
+                    <div class="combobox slds-m-around--small" style="width: 115px;">
+                        <lightning:select aura:id="SelectLang" onchange="{!c.onLangChange}" label="{!v.langSelected.Select_Language}" value="{!v.defaultLanguage}">
+                            <option value="da">Danish</option>
+                            <option value="French">French</option>
+                            <option value="Dutch">Dutch</option>
+                            <option value="en_US">English</option>
+                            <option value="Norwegian">Norwegian</option>
+                            <option value="Swedish">Swedish</option>
+                            <!--<option value="Finnish">Finnish</option>-->
+                        </lightning:select>
+                    </div>
+                    <div class="slds-m-left--small slds-m-vertical--medium contentStyle">
+                        <form autocomplete="off">
+                            <lightning:input name="input2" label="{!v.langSelected.Name}" value="{!v.caseObj.SuppliedName}"
+                                             required="true" type="text"
+                                             class="slds-m-top--medium RequiredFields"  aura:id="caseField" messageWhenValueMissing="{!v.langSelected.Required_Error_Message}" onkeyup="{!c.removeError}"/>
+                            
+                            <lightning:input name="input2" label="{!v.langSelected.Email}" value="{!v.caseObj.SuppliedEmail}"
+                                             required="true" aura:id="caseField" class="slds-m-top--medium RequiredFields" type="email"
+                                             disabled="{!v.disableForInternal}" messageWhenValueMissing="{!v.langSelected.Required_Error_Message}"/>
+                            
+                            <lightning:combobox name="progress" class="slds-m-top--medium RequiredFields" required="true"
+                                                label="{!v.langSelected.Country}" aura:id="caseField"
+                                                value="{!v.caseObj.SubmittedCountry__c}"
+                                                placeholder="{!v.langSelected.Select_Country}" options="{! v.submittedCountryList }"
+                                                disabled="{!v.disableForInternal}" messageWhenValueMissing="{!v.langSelected.Required_Error_Message}"/>
+                            
+                            <lightning:combobox name="progress" class="slds-m-top--medium RequiredFields" required="true"
+                                                label="{!v.langSelected.Penneo_Product}" aura:id="caseField"
+                                                value="{!v.caseObj.SubmittedSolution__c}"
+                                                placeholder="{!v.langSelected.Select_a_Solution}" options="{! v.solutionList }"
+                                                disabled="{!v.disableForInternal}" onchange="{!c.showDocKey}" messageWhenValueMissing="{!v.langSelected.Required_Error_Message}"/>
+                            
+                            <aura:if isTrue="{!v.showDocKey}">
+                                <div class="infoDiv">
+                                    <lightning:input name="documentKey" label="{!v.langSelected.Document_Key}"
+                                                     aura:id="caseField"
+                                                     value="{!v.caseObj.Document_Key__c}" type="text" class="slds-m-top--medium"/>
+                                    <div class="hoverIcon">
+                                        <lightning:icon iconName="utility:info" onhover="{!c.showHelpTextJS}" alternativeText="helpDocKey" size="xx-small" class="infoIcon"/>
+                                        <div class="infoContent">
+                                            <!-- <aura:unescapedHtml value="{!$Label.c.CaseDocKey}" /> -->
+                                            <!-- <span class="slds-m-left small slds-m-top small" style="font-size: 10px;line-height: 12px;color: #03224c;font-weight: 800 ;">{!v.langSelected.DocHelpText}</span> -->
+                                            <p>{!v.langSelected.DocHelpText.The} <a href="{!$Label.c.LocateCaseId}" target="_blank">{!v.langSelected.DocHelpText.link}</a>{!v.langSelected.DocHelpText.othertext}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </aura:if>
+                            
+                            <lightning:input type="url"  label="{!v.langSelected.URL__Problem}" value="{!v.caseObj.URL_Issue__c}"
+                                             aura:id="caseField" class="slds-m-top--medium"/>
+                            
+                            <lightning:input aura:id="caseField2" name="enter-search2" label="{!v.langSelected.Subject}" required="true" autocomplete="off"
+                                             value="{!v.caseObj.Subject}" class="slds-m-top_xx-small" onchange="{!c.showArticles}" messageWhenValueMissing="{!v.langSelected.Required_Error_Message}"/>
+                            
+                            <aura:if isTrue="{!v.showSuggestions}">
+                                <p class="slds-m-vertical--small suggestionStyle">Suggested Articles</p>
+                                <aura:iteration var="article" items="{!v.articlesList}" indexVar="index">
+                                    <p data-value="{!article.value}" class="slds-m-vertical--small cardHoverStyle" onclick="{!c.handleChangeArticle}">{!article.label}</p>
+                                </aura:iteration>
+                                <lightning:button label="Show More" onclick="{!c.showMoreSuggestions}"/>
+                            </aura:if>
+                            
+                            <!--
+                            <lightning:textarea name="input2" label="{!v.langSelected.Description}" value="{!v.caseObj.Description}"
+                                                required="true" fieldLevelHelp="{!v.langSelected.Description_Placeholder}" placeholder="{!v.langSelected.Description_Placeholder}"
+                                                class="slds-m-top-medium RequiredFields" aura:id="caseField" messageWhenValueMissing="{!v.langSelected.Required_Error_Message}"/>
+       -->
+                            
+                            <div class="slds-m-top--medium">
+                                <label class="slds-form-element__label">
+                                    <abbr class="slds-required" title="required">*</abbr>
+                                    <span class="slds-m-right_x-small">{!v.langSelected.Description}</span>
+                                </label>
+                                <p style="font-style:italic">{!v.langSelected.Description_Placeholder}</p>
+                                <lightning:textarea name="input2" value="{!v.caseObj.Description}"
+                                                    required="true"
+                                                    class="RequiredFields DescriptionTxt" aura:id="caseField" messageWhenValueMissing="{!v.langSelected.Required_Error_Message}"/> 
+                            </div>
+                            
+                            <lightning:fileUpload label="{!v.langSelected.Attachments}" name="fileUploader" multiple="true"
+                                                  fileFieldName="Guest_Record_fileupload__c" fileFieldValue="{!v.randomString}"
+                                                  onuploadfinished="{!c.handleUploadFinished}"
+                                                  class="slds-m-top--medium slds-m-bottom--medium"/>
+                            
+                            <aura:if isTrue="{!v.showFileNames}">
+                                <div class="slds-m-vertical--small">
+                                    <aura:iteration items="{!v.fileNames}" var="fileName" indexVar="index">
+                                        <p>{!fileName}&nbsp;
+                                            <a onclick="{!c.removeRow}" data-record="{!index}">
+                                                <lightning:icon iconName="utility:delete"
+                                                                size="x-small"
+                                                                alternativeText="Delete"/>
+                                                <span class="slds-assistive-text">Delete</span>
+                                            </a>
+                                        </p>
+                                    </aura:iteration>
+                                </div>
+                            </aura:if>
+                            
+                            <div class="slds-grid slds-wrap slds-size_12-of-12 iFrame">
+                                <iframe aura:id="vfFrame" id="vfFrame"
+                                        class="slds-m-top-medium reCaptchaSmall"
+                                        src="/support/apex/RecaptchaGoogle"
+                                        frameborder="0" width="100%" height="100%" allowtransparency="true">
+                                </iframe>
+                                <div class="slds-grid slds-wrap slds-size_2-of-12 slds-p-around--small submitForm">
+                                    <lightning:button class="slds-m-top_small" variant="brand" onclick="{!c.saveCase}" name="SUBMIT"
+                                                      label="{!v.langSelected.Submit_Form}" disabled="{!v.isDisable}"/>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </lightning:layoutItem>
+            </lightning:layout>
+        </aura:set>
+    </aura:if>
+    <c:ApexService aura:id="service"/>
+</aura:component>
